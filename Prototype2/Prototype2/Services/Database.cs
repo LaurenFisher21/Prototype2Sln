@@ -7,19 +7,33 @@ namespace Prototype2.Services
 {
     public class Database
     {
+        /// <summary>
+        /// Real databases would use Dependancy Injections and Interfaces.
+        /// </summary>
+
+
+        //The connection to the Database.
         private readonly SQLiteAsyncConnection _database;
 
-        public Database(string dbPath)
+
+        //Constructor where the tables are created for storage.
+        public Database(string dbPath) 
         {
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<UserData>();
         }
 
-        public Task<List<UserData>> GetUserDataAsync()
+
+        //Gets a list of user data.
+        public Task<List<UserData>> GetUserDataAsync() 
         {
             return _database.Table<UserData>().ToListAsync();
+            //This line of code means that all the records or data in the table are accesible from here.
+            //This is also the part of the code where we would be able to right query code.
         }
 
+
+        //Takes an object and stores it in the table that we created.
         public Task<int> SaveUserDataAsync (UserData userdata)
         {
             return _database.InsertAsync(userdata);

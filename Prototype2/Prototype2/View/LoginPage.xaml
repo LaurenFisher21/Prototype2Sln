@@ -24,9 +24,9 @@
         <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4"
                Text="Welcome to StickerTime!" HorizontalTextAlignment="Center"
                FontSize="50"/>
-        <Editor Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4"
+        <Entry Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4"
                 Margin="10, 0" Placeholder="Email Address"/>
-        <Editor Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4"
+        <Entry Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4"
                 Margin="10, 0" Placeholder="Password"/>
         <Button Text="Login" Clicked="LoginClicked"
                 Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2"
