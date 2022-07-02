@@ -33,7 +33,7 @@ namespace Prototype2.Services
         }
 
 
-        //Takes an object and stores it in the table that we created.
+        //Takes an object and stores it in the table.
         public Task<int> SaveUserDataAsync (UserData userdata)
         {
             return _database.InsertAsync(userdata);

@@ -13,7 +13,7 @@ namespace Prototype2
         /// is accessible throughout the app.
         /// </summary>
         private static Database database;
-        private static Database Database
+        public static Database Database
         {
             get
             {
