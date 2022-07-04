@@ -34,6 +34,17 @@ namespace Prototype2.View
 
                 await Navigation.PushAsync(new DummyPage());
             }
+
+            if (string.IsNullOrWhiteSpace(firstNameEntry.Text) || string.IsNullOrWhiteSpace(lastNameEntry.Text)
+                || string.IsNullOrWhiteSpace(emailEntry.Text) || string.IsNullOrWhiteSpace(passwordEntry.Text))
+            {
+                await DisplayAlert("Incomplete Form", "Not all fields have been filled!", "Okay");
+
+                firstNameEntry.PlaceholderColor = Color.Red;
+                lastNameEntry.PlaceholderColor = Color.Red;
+                emailEntry.PlaceholderColor = Color.Red;
+                passwordEntry.PlaceholderColor = Color.Red;
+            }
         }
     }
 }

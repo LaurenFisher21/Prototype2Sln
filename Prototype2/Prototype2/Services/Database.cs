@@ -9,6 +9,7 @@ namespace Prototype2.Services
     {
         /// <summary>
         /// Real databases would use Dependancy Injections and Interfaces.
+        /// Use EntityFrameworkCore
         /// </summary>
 
 
