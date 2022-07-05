@@ -45,6 +45,8 @@ namespace Prototype2.View
                 emailEntry.PlaceholderColor = Color.Red;
                 passwordEntry.PlaceholderColor = Color.Red;
             }
+
+            
         }
     }
 }

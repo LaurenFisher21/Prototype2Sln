@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace Prototype2.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ChildHomePage : ContentPage
+    public partial class ChildHomePage : TabbedPage
     {
         public ChildHomePage()
         {
