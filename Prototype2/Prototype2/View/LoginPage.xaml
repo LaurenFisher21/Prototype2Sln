@@ -31,10 +31,10 @@
         <Button Text="Login" Clicked="LoginClicked"
                 Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2"
                 Margin="10, 0"/>
-        <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="1"
+        <Button Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="2"
                 Margin="10, 0" Text="Create Account!" FontAttributes="None"
                 BackgroundColor="Transparent" Clicked="CreateAccountClicked"/>
-        <Button Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="1"
+        <Button Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="2"
                 Margin="10, 0" Text="Forgot Password?" FontAttributes="None"
                 BackgroundColor="Transparent" Clicked="ForgotPasswordClicked"/>
     </Grid>
