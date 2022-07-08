@@ -15,10 +15,10 @@ namespace Prototype2WebApi.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string EmailAddress { get; set; }
-        public int CellNumber { get; set; }
-        public string Password { get; set; }
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
+        public string EmailAddress { get; set; } = string.Empty;
+        public string CellNumber { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
     }
 }

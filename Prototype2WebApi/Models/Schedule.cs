@@ -10,8 +10,8 @@ namespace Prototype2WebApi.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ScheduleId { get; set; }
-        public int TaskName { get; set; }
-        public int Description { get; set; }
-        public int Completed { get; set; }
+        public string TaskName { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public bool Completed { get; set; }
     }
 }
