@@ -47,5 +47,31 @@ namespace Prototype2WebApi.Controllers
             schedule.Add(task);
             return Ok(schedule);
         }
+
+        [HttpPut]
+        public async Task<ActionResult<List<Schedule>>> UpdateTask(Schedule request)
+        {
+            var task = schedule.Find(h => h.ScheduleId == request.ScheduleId);
+            if (task == null)
+                return BadRequest("Task not found.");
+            
+            task.ScheduleId = request.ScheduleId;
+            task.TaskName = request.TaskName;
+            task.Description = request.Description;
+            task.Completed = request.Completed;
+
+            return Ok(schedule);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<List<Schedule>>> Delete(int id)
+        {
+            var task = schedule.Find(h => h.ScheduleId == id);
+            if (task == null)
+                return BadRequest("Task not found.");
+
+            schedule.Remove(task);
+            return Ok(schedule);
+        }
     }
 }
