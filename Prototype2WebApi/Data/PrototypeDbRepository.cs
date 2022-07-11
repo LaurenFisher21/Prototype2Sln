@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Prototype2WebApi.Models;
+﻿using Prototype2WebApi.Models;
 
 namespace Prototype2WebApi.Data
 {
@@ -15,6 +14,7 @@ namespace Prototype2WebApi.Data
             _dataContext = dataContext;
         }
 
+        //Creating a new user
         public UserInfoData CreateNewUser(UserInfoData user)
         {
             _dataContext.UserInfoDatas.Add(user);
@@ -23,19 +23,59 @@ namespace Prototype2WebApi.Data
             return user;
         }
 
+        //Checking if the user ID exists
         public bool DoesUserExistById(int id)
         {
             return _dataContext.UserInfoDatas.Any(use => use.UserId == id);
         }
 
+        //Checking if the user email exists
         public bool DoesUserExistByEmail(string email)
         {
             return _dataContext.UserInfoDatas.Any(use => use.EmailAddress == email);
         }
 
-        public IEnumerable<UserInfoData> All
+        //Gets all the users
+        public List<UserInfoData> GetUserInfoData()
         {
-            get { return _dataContext.UserInfoDatas.ToList(); }
+            var users = _dataContext.UserInfoDatas.ToList();
+            return users;
+        }
+
+        public UserInfoData GetUserById(int id)
+        {
+            var user = _dataContext.UserInfoDatas.Where(x => x.UserId == id).FirstOrDefault();
+            return user;
+        }
+
+        public UserInfoData GetCustomerByFirstName(string firstname)
+        {
+            var user = _dataContext.UserInfoDatas.Where(x => x.FirstName.Contains(firstname)).FirstOrDefault();
+            return user;
+        }
+
+        public UserInfoData GetCustomerByLastName(string lastname)
+        {
+            var user = _dataContext.UserInfoDatas.Where(x => x.LastName.Contains(lastname)).FirstOrDefault();
+            return user;
+        }
+
+        public UserInfoData GetCustomerByEmail(string email)
+        {
+            var user = _dataContext.UserInfoDatas.Where(x => x.LastName.Contains(email)).FirstOrDefault();
+            return user;
+        }
+
+        public UserInfoData GetCustomerByCell(string cell)
+        {
+            var user = _dataContext.UserInfoDatas.Where(x => x.LastName.Contains(cell)).FirstOrDefault();
+            return user;
+        }
+
+        public UserInfoData GetCustomerByPassword(string password)
+        {
+            var user = _dataContext.UserInfoDatas.Where(x => x.LastName.Contains(password)).FirstOrDefault();
+            return user;
         }
     }
 }
