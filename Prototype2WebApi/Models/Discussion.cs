@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Prototype2WebApi.Models
 {
-    public class Avatars
+    public class Discussion
     {
         [Required]
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int AvatarId { get; set; }
+        public int DiscussionsId { get; set; }
 
         [ForeignKey("UserInfoData")]
         public int UserId { get; set; }

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Prototype2WebApi.Models
 {
-    public class PostedStories
+    public class PostedStory
     {
         [Required]
         [Key]
