@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Prototype2WebApi.Models
 {
-    public class Stickers
+    public class Acheivements
     {
         [Required]
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int StickerId { get; set; }
-        public string StickerName { get; set; }
+        public int AcheivemesntsId { get; set; }
+        public string Descriptions { get; set; }
     }
 }

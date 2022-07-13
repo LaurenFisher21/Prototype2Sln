@@ -3,12 +3,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Prototype2WebApi.Models
 {
-    public class Stickers
+    public class Calendar
     {
         [Required]
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int StickerId { get; set; }
-        public string StickerName { get; set; }
+        public int CalendarId { get; set; }
     }
 }

@@ -9,6 +9,9 @@ namespace Prototype2WebApi.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StoryId { get; set; }
-        public string StoryName { get; set; } = string.Empty;
+        public string StoryName { get; set; }
+
+        [ForeignKey("Stickers")]
+        public int StickerId { get; set; }
     }
 }
