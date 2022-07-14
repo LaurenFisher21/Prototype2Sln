@@ -13,5 +13,6 @@ namespace Prototype2WebApi.Interfaces
         UserInfoData GetCustomerByEmail(string email);
         UserInfoData GetCustomerByCell(string cell);
         UserInfoData GetCustomerByPassword(string password);
+        public List<UserInfoData> GetUserInfoData();
     }
 }

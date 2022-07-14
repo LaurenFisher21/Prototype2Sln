@@ -43,5 +43,17 @@ namespace Prototype2WebApi.Controllers
             }
             return Ok(userinfo);
         }
+
+        [HttpGet]
+        public IEnumerable<UserInfoData> Get()
+        {
+            return _prototypeDbRepository.GetUserInfoData();
+        }
+
+        [HttpGet("byid")]
+        public UserInfoData Get([FromQuery] int id)
+        {
+            return _prototypeDbRepository.GetUserById(id);
+        }
     }
 }
