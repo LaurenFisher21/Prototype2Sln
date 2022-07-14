@@ -4,11 +4,12 @@
     {
         CustomerNotValid,
         CustomerDuplicate,
-        CustomerCreationFailed,
+        ScheduleCreationFailed,
         AuthenticationFailed,
         BankAccountNotValid,
         BankAccountCreationFailed,
         BankAccountNotValidForTransaction,
-        InsufficientFundsForTransaction
+        InsufficientFundsForTransaction,
+        SchedueNotValid
     }
 }

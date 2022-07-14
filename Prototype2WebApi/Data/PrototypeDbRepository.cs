@@ -22,6 +22,26 @@ namespace Prototype2WebApi.Data
 
             return user;
         }
+        //creating a new schedule
+        public Schedule CreateNewSchedule(Schedule schedule)
+        {
+            _dataContext.Schedules.Add(schedule);
+            _dataContext.SaveChanges();
+
+            return schedule;
+        }
+        //checking if the schedule id exists
+        public bool DoesScheduleExistById(int id)
+        {
+            return _dataContext.Schedules.Any(use => use.ScheduleId == id);
+        }
+        //Get all schedule
+
+        public List<Schedule> GetAllSchedules()
+        {
+            var schedule = _dataContext.Schedules.ToList();
+            return schedule;
+        }
 
         //Checking if the user ID exists
         public bool DoesUserExistById(int id)

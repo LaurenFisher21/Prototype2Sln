@@ -39,7 +39,7 @@ namespace Prototype2WebApi.Controllers
             }
             catch (Exception)
             {
-                return BadRequest(SystemErrorCodes.CustomerCreationFailed.ToString());
+                return BadRequest(SystemErrorCodes.ScheduleCreationFailed.ToString());
             }
             return Ok(userinfo);
         }
