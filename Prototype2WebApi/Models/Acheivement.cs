@@ -8,7 +8,7 @@ namespace Prototype2WebApi.Models
         [Required]
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int AcheivemesntsId { get; set; }
+        public int AcheivementsId { get; set; }
         public string Descriptions { get; set; }
     }
 }

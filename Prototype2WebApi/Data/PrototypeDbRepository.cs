@@ -97,5 +97,25 @@ namespace Prototype2WebApi.Data
             var user = _dataContext.UserInfoDatas.Where(x => x.LastName.Contains(password)).FirstOrDefault();
             return user;
         }
+
+        public Acheivement CreateNewAcheivement(Acheivement acheivement)
+        {
+            _dataContext.Acheivements.Add(acheivement);
+            _dataContext.SaveChanges();
+
+            return acheivement;
+        }
+
+        public List<Acheivement> GetAllAcheivements()
+        {
+            var acheivements = _dataContext.Acheivements.ToList();
+            return acheivements;
+        }
+
+        public Acheivement GetAcheivementById(int id)
+        {
+            var acheivement = _dataContext.Acheivements.Where(x => x.AcheivementsId == id).FirstOrDefault();
+            return acheivement;
+        }
     }
 }

@@ -17,5 +17,9 @@ namespace Prototype2WebApi.Interfaces
         UserInfoData GetCustomerByEmail(string email);
         UserInfoData GetCustomerByCell(string cell);
         UserInfoData GetCustomerByPassword(string password);
+        public List<UserInfoData> GetUserInfoData();
+        public Acheivement CreateNewAcheivement(Acheivement acheivement);
+        public List<Acheivement> GetAllAcheivements();
+        public Acheivement GetAcheivementById(int id);
     }
 }
