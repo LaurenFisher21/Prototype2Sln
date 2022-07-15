@@ -6,54 +6,49 @@ using Prototype2WebApi.Models;
 
 namespace Prototype2WebApi.Controllers
 {
-    /// <summary>
-    /// Make GET, PUT, POST AND DELETE request from here.
-    /// </summary>
-
     [Route("api/[controller]")]
     [ApiController]
-    public class UserInfoController : ControllerBase
+    public class FamilyStatusController : ControllerBase
     {
         private readonly IPrototypeDbRepository _prototypeDbRepository;
-
-        public UserInfoController(IPrototypeDbRepository prototypeDbRepository)
+        public FamilyStatusController(IPrototypeDbRepository prototypeDbRepository)
         {
             _prototypeDbRepository = prototypeDbRepository;
         }
 
         [HttpPost]
-        public IActionResult CreateUser([FromBody] UserInfoData userinfo)
+        public IActionResult CreateFamilyStatus([FromBody] FamilyStatus familystatus)
         {
             try
             {
-                if (userinfo == null || !ModelState.IsValid)
+                if (familystatus == null || !ModelState.IsValid)
                 {
                     return BadRequest(SystemErrorCodes.CustomerNotValid.ToString());
                 }
-                bool customerExists = _prototypeDbRepository.DoesUserExistByEmail(userinfo.EmailAddress);
-                if (customerExists)
+                bool familystatusExists = _prototypeDbRepository.DoesFamilyStatusExistById(familystatus.FamilyStatusId);
+                if (familystatusExists)
                 {
                     return StatusCode(StatusCodes.Status409Conflict, SystemErrorCodes.CustomerDuplicate.ToString());
                 }
-                _prototypeDbRepository.CreateNewUser(userinfo);
+                _prototypeDbRepository.CreateFamilyStatus(familystatus);
             }
             catch (Exception e)
             {
                 return BadRequest(SystemErrorCodes.ScheduleCreationFailed.ToString());
             }
-            return Ok(userinfo);
+            return Ok(familystatus);
         }
 
         [HttpGet]
-        public IEnumerable<UserInfoData> Get()
+        public IEnumerable<FamilyStatus> Get()
         {
-            return _prototypeDbRepository.GetUserInfoData();
+            return _prototypeDbRepository.GetAllFamilyStatuses();
         }
 
         [HttpGet("byid")]
-        public UserInfoData Get([FromQuery] int id)
+        public FamilyStatus Get([FromQuery] int id)
         {
-            return _prototypeDbRepository.GetUserById(id);
+            return _prototypeDbRepository.GetFamilyStatusById(id);
         }
     }
 }
