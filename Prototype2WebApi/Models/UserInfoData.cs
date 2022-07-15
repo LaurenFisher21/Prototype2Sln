@@ -20,5 +20,6 @@ namespace Prototype2WebApi.Models
         public string EmailAddress { get; set; }
         public string CellNumber { get; set; }
         public string Password { get; set; }
+        public DateTime DateTime { get; set; }
     }
 }
