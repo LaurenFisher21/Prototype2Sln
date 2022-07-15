@@ -33,7 +33,7 @@ namespace Prototype2WebApi.Controllers
                 bool customerExists = _prototypeDbRepository.DoesUserExistByEmail(userinfo.EmailAddress);
                 if (customerExists)
                 {
-                    return StatusCode(StatusCodes.Status409Conflict, SystemErrorCodes.CustomerDuplicate.ToString());
+                    return StatusCode(StatusCodes.Status409Conflict, SystemErrorCodes.PostedStoryDuplicate.ToString());
                 }
                 _prototypeDbRepository.CreateNewUser(userinfo);
             }

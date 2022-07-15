@@ -7,49 +7,49 @@ namespace Prototype2WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ScheduleController : ControllerBase
+    public class PostedStoryController
     {
         private readonly IPrototypeDbRepository _prototypeDbRepository;
-        public ScheduleController(IPrototypeDbRepository prototypeDbRepository)
+        public PostedStoryController(IPrototypeDbRepository prototypeDbRepository)
         {
             _prototypeDbRepository = prototypeDbRepository;
         }
 
         [HttpPost]
-        public IActionResult CreateSchedule([FromBody] Schedule schedule)
+        public IActionResult PostStory([FromBody] PostedStory postedstory)
         {
             try
             {
-                if (schedule == null || !ModelState.IsValid)
+                if (postedstory == null || !ModelState.IsValid)
                 {
-                    return BadRequest(SystemErrorCodes.SchedueNotValid.ToString());
+                    return BadRequest(SystemErrorCodes.PostedStoryFailed.ToString());
                 }
-                bool DoesScheduleExist = _prototypeDbRepository.DoesScheduleExistById(schedule.ScheduleId);
-                if (DoesScheduleExist)
+                bool DoesPostedStoryExist = _prototypeDbRepository.DoesPostedStoryExistById(postedstory.PostedStoryId);
+                if (DoesPostedStoryExist)
                 {
                     return StatusCode(StatusCodes.Status409Conflict, SystemErrorCodes.PostedStoryDuplicate.ToString());
                 }
-                _prototypeDbRepository.CreateNewSchedule(schedule);
+                _prototypeDbRepository.PostStory(postedstory);
             }
             catch (Exception)
             {
                 return BadRequest(SystemErrorCodes.ScheduleCreationFailed.ToString());
             }
-            return Ok(schedule);
+            return Ok(postedstory);
         }
         [HttpGet]
-        public IEnumerable<Schedule> Get()
+        public IEnumerable<PostedStory> Get()
         {
-            return _prototypeDbRepository.GetAllSchedules();
+            return _prototypeDbRepository.GetAllPostedStories();
         }
 
-        // GET api/<ScheduleController>/5
+        // GET api/<CustomerController>/5
         [HttpGet("byid")]
-        public Schedule Get([FromQuery] int id)
+        public PostedStory Get([FromQuery] int id)
         {
-            return _prototypeDbRepository.GetScheduleId(id);
+            return _prototypeDbRepository.GetPostedStoryId(id);
         }
 
-        
+
     }
 }
