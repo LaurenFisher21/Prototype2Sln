@@ -154,7 +154,6 @@ namespace Prototype2WebApi.Data
             var famstatus = _dataContext.FamilyStatuses.ToList();
             return famstatus;
         }
-
         public FamilyStatus GetFamilyStatusById(int id)
         {
             var famstatus = _dataContext.FamilyStatuses.Where(x => x.FamilyStatusId == id).FirstOrDefault();
