@@ -3,13 +3,14 @@
     public enum SystemErrorCodes
     {
         CustomerNotValid,
-        CustomerDuplicate,
+        PostedStoryDuplicate,
         ScheduleCreationFailed,
         AuthenticationFailed,
         BankAccountNotValid,
         BankAccountCreationFailed,
         BankAccountNotValidForTransaction,
         InsufficientFundsForTransaction,
-        SchedueNotValid
+        SchedueNotValid,
+        PostedStoryFailed
     }
 }
