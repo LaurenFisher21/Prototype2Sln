@@ -37,7 +37,7 @@ namespace Prototype2WebApi.Controllers
                 }
                 _prototypeDbRepository.CreateNewUser(userinfo);
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return BadRequest(SystemErrorCodes.ScheduleCreationFailed.ToString());
             }

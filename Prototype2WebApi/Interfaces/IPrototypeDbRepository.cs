@@ -25,5 +25,13 @@ namespace Prototype2WebApi.Interfaces
         public Acheivement CreateNewAcheivement(Acheivement acheivement);
         public List<Acheivement> GetAllAcheivements();
         public Acheivement GetAcheivementById(int id);
+        public FamilyGroup CreateFamilyGroup(FamilyGroup famgroup);
+        public bool DoesFamilyGroupExistById(int id);
+        public List<FamilyGroup> GetAllFamilyMembers();
+        public FamilyGroup GetFamilyGroupById(int id);
+        public FamilyStatus CreateFamilyStatus(FamilyStatus famstatus);
+        public bool DoesFamilyStatusExistById(int id);
+        public List<FamilyStatus> GetAllFamilyStatuses();
+        public FamilyStatus GetFamilyStatusById(int id);
     }
 }
