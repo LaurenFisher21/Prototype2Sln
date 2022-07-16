@@ -1,4 +1,4 @@
-﻿using Community;
+﻿using Prototype2.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +9,14 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Prototype2.View
+namespace Community
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BlogComHome : ContentPage
+    public partial class Vlogs : ContentPage
     {
 
-        // Launcher.OpenAsync is provided by Xamarin.Essentials.
         public ICommand TapCommand => new Command<string>(async (url) => await Launcher.OpenAsync(url));
-        public BlogComHome()
+        public Vlogs()
         {
             InitializeComponent();
             BindingContext = this;
@@ -28,9 +27,9 @@ namespace Prototype2.View
             await Navigation.PushAsync(new Podcasts());
         }
 
-        private async void VlogsClicked(object sender, EventArgs e)
+        private async void BlogsClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Vlogs());
+            await Navigation.PushAsync(new BlogComHome());
         }
     }
 }
