@@ -28,7 +28,7 @@ namespace Prototype2WebApi.Controllers
                 bool DoesStoryExist = _prototypeDbRepository.DoesStoryExistById(story.StoryId);
                 if (DoesStoryExist)
                 {
-                    return StatusCode(StatusCodes.Status409Conflict, SystemErrorCodes.PostedStoryDuplicate.ToString());
+                    return StatusCode(StatusCodes.Status409Conflict, SystemErrorCodes.StoryDuplicate.ToString());
                 }
                 _prototypeDbRepository.CreateNewStory(story);
             }
@@ -44,7 +44,7 @@ namespace Prototype2WebApi.Controllers
             return _prototypeDbRepository.GetAllStories();
         }
 
-        // GET api/<ScheduleController>/5
+        
         [HttpGet("byid")]
         public Story Get([FromQuery] int id)
         {

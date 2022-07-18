@@ -3,6 +3,8 @@
     public enum SystemErrorCodes
     {
         CustomerNotValid,
+        CustomerDuplicate,
+        StoryDuplicate,
         PostedStoryDuplicate,
         ScheduleCreationFailed,
         AuthenticationFailed,
@@ -13,6 +15,7 @@
         SchedueNotValid,
         PostedStoryFailed,
         StoryNotValid,
-        StoryCreationFailed
+        StoryCreationFailed,
+        StickerNotValid
     }
 }

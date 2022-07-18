@@ -196,7 +196,7 @@ namespace Prototype2WebApi.Data
 
         public Story CreateNewStory(Story story)
         {
-            _dataContext.Schedules.Add(story);
+            _dataContext.Stories.Add(story);
             _dataContext.SaveChanges();
 
             return story;
