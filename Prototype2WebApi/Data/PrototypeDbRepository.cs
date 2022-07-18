@@ -23,7 +23,7 @@ namespace Prototype2WebApi.Data
 
             return user;
         }
-        //creating a new schedule
+        //creating a new schedule 1
         public Schedule CreateNewSchedule(Schedule schedule)
         {
             _dataContext.Schedules.Add(schedule);
@@ -31,15 +31,22 @@ namespace Prototype2WebApi.Data
 
             return schedule;
         }
-        //checking if the schedule id exists
+        //checking if the schedule id exists 2
         public bool DoesScheduleExistById(int id)
         {
             return _dataContext.Schedules.Any(use => use.ScheduleId == id);
         }
-        //Get all schedule
-        public List<Schedule> GetAllSchedules()
+        //Get all schedule 3
+        
+        public List<Schedule> GetAllSchedules(bool fullFetch = true)
         {
             var schedule = _dataContext.Schedules.ToList();
+            return schedule;
+        }
+        //4
+        public Schedule GetScheduleById(int id)
+        {
+            var schedule = _dataContext.Schedules.Where(x => x.ScheduleId == id).FirstOrDefault();
             return schedule;
         }
         //Checking if the user ID exists
@@ -107,15 +114,7 @@ namespace Prototype2WebApi.Data
             return acheivement;
         }
 
-        public List<Schedule> GetAllSchedules(bool fullFetch = true)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Schedule GetScheduleId(int id, bool fullFetch = true)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public FamilyGroup CreateFamilyGroup(FamilyGroup famgroup)
         {
@@ -160,24 +159,60 @@ namespace Prototype2WebApi.Data
             return famstatus;
         }
 
+
+
+
         public List<PostedStory> GetAllPostedStories(bool fullFetch = true)
         {
-            throw new NotImplementedException();
+            var postedstories = _dataContext.PostedStories.ToList();
+            return postedstories;
         }
 
         public PostedStory PostStory(PostedStory postedstory)
         {
-            throw new NotImplementedException();
+            _dataContext.PostedStories.Add(postedstory);
+            _dataContext.SaveChanges();
+
+            return postedstory;
         }
 
-        public PostedStory GetPostedStoryId(int id, bool fullFetch = true)
+        public PostedStory GetPostedStoryId(int id)
         {
-            throw new NotImplementedException();
+            var postedstory = _dataContext.PostedStories.Where(x => x.PostedStoryId == id).FirstOrDefault();
+            return postedstory;
         }
 
-        public bool DoesPostedStoryExistById(int id)
+        public bool DoesPostedStoryExistById(int id) 
         {
-            throw new NotImplementedException();
+            return _dataContext.PostedStories.Any(use => use.PostedStoryId == id);
         }
+
+        // story
+        public List<Story> GetAllStories(bool fullFetch = true)
+        {
+            var stories = _dataContext.Stories.ToList();
+            return stories;
+        }
+
+        public Story CreateNewStory(Story story)
+        {
+            _dataContext.Schedules.Add(story);
+            _dataContext.SaveChanges();
+
+            return story;
+        }
+
+        public Story GetStoryId(int id, bool fullFetch = true)
+        {
+            var story = _dataContext.Stories.Where(x => x.StoryId == id).FirstOrDefault();
+            return story;
+        }
+
+        public bool DoesStoryExistById(int id)
+        {
+            return _dataContext.Stories.Any(use => use.StoryId == id);
+        }
+
+
     }
 }

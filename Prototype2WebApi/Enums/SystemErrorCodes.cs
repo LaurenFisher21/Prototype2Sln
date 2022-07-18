@@ -11,6 +11,8 @@
         BankAccountNotValidForTransaction,
         InsufficientFundsForTransaction,
         SchedueNotValid,
-        PostedStoryFailed
+        PostedStoryFailed,
+        StoryNotValid,
+        StoryCreationFailed
     }
 }

@@ -47,7 +47,7 @@ namespace Prototype2WebApi.Controllers
         [HttpGet("byid")]
         public Schedule Get([FromQuery] int id)
         {
-            return _prototypeDbRepository.GetScheduleId(id);
+            return _prototypeDbRepository.GetScheduleById(id);
         }
 
         
