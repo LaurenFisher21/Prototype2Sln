@@ -7,7 +7,7 @@ namespace Prototype2WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PostedStoryController
+    public class PostedStoryController : ControllerBase
     {
         private readonly IPrototypeDbRepository _prototypeDbRepository;
         public PostedStoryController(IPrototypeDbRepository prototypeDbRepository)

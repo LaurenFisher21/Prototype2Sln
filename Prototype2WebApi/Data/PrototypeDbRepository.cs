@@ -159,5 +159,25 @@ namespace Prototype2WebApi.Data
             var famstatus = _dataContext.FamilyStatuses.Where(x => x.FamilyStatusId == id).FirstOrDefault();
             return famstatus;
         }
+
+        public List<PostedStory> GetAllPostedStories(bool fullFetch = true)
+        {
+            throw new NotImplementedException();
+        }
+
+        public PostedStory PostStory(PostedStory postedstory)
+        {
+            throw new NotImplementedException();
+        }
+
+        public PostedStory GetPostedStoryId(int id, bool fullFetch = true)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DoesPostedStoryExistById(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
