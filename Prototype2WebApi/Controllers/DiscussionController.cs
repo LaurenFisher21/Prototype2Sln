@@ -6,23 +6,19 @@ using Prototype2WebApi.Models;
 
 namespace Prototype2WebApi.Controllers
 {
-    /// <summary>
-    /// Make GET, PUT, POST AND DELETE request from here.
-    /// </summary>
-
     [Route("api/[controller]")]
     [ApiController]
-    public class UserInfoController : ControllerBase
+    public class DiscussionController : ControllerBase
     {
         private readonly IPrototypeDbRepository _prototypeDbRepository;
 
-        public UserInfoController(IPrototypeDbRepository prototypeDbRepository)
+        public DiscussionController(IPrototypeDbRepository prototypeDbRepository)
         {
             _prototypeDbRepository = prototypeDbRepository;
         }
 
         [HttpPost]
-        public IActionResult CreateUser([FromBody] UserInfoData userinfo)
+        public IActionResult CreateDiscussion([FromBody] Discussion userinfo)
         {
             try
             {
@@ -30,30 +26,30 @@ namespace Prototype2WebApi.Controllers
                 {
                     return BadRequest(SystemErrorCodes.CustomerNotValid.ToString());
                 }
-                bool customerExists = _prototypeDbRepository.DoesUserExistByEmail(userinfo.EmailAddress);
+                bool customerExists = _prototypeDbRepository.DoesUserExistById(userinfo.UserId);
                 if (customerExists)
                 {
-                    return StatusCode(StatusCodes.Status409Conflict, SystemErrorCodes.CustomerDuplicate.ToString());
+                    return StatusCode(StatusCodes.Status409Conflict, SystemErrorCodes.PostedStoryDuplicate.ToString());
                 }
-                _prototypeDbRepository.CreateNewUser(userinfo);
+                _prototypeDbRepository.CreateNewDiscussion(userinfo);
             }
             catch (Exception e)
             {
-                return BadRequest(SystemErrorCodes.CustomerCreationFailed.ToString());
+                return BadRequest(SystemErrorCodes.ScheduleCreationFailed.ToString());
             }
             return Ok(userinfo);
         }
 
         [HttpGet]
-        public IEnumerable<UserInfoData> Get()
+        public IEnumerable<Discussion> Get()
         {
-            return _prototypeDbRepository.GetUserInfoData();
+            return _prototypeDbRepository.GetDiscussion();
         }
 
         [HttpGet("byid")]
-        public UserInfoData Get([FromQuery] int id)
+        public Discussion Get([FromQuery] int id)
         {
-            return _prototypeDbRepository.GetUserById(id);
+            return _prototypeDbRepository.GetDiscussionById(id);
         }
     }
 }

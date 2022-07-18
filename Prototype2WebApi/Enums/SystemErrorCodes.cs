@@ -3,6 +3,8 @@
     public enum SystemErrorCodes
     {
         CustomerNotValid,
+        CustomerDuplicate,
+        CustomerCreationFailed,
         PostedStoryDuplicate,
         ScheduleCreationFailed,
         AuthenticationFailed,
@@ -11,6 +13,18 @@
         BankAccountNotValidForTransaction,
         InsufficientFundsForTransaction,
         SchedueNotValid,
-        PostedStoryFailed
+        PostedStoryFailed,
+        FollowerNotValid,
+        FollowerDuplicate,
+        FollowerCreationFailed,
+        AvatarNotValid,
+        AvatarDuplicate,
+        AvatarCreationFailed,
+        FamilyGroupNotValid,
+        FamilyGroupDuplicate,
+        FamilyGroupCreationFailed,
+        FamilyStatusNotValid,
+        FamilyStatusDuplicate,
+        FamilyStatusCreationFailed
     }
 }

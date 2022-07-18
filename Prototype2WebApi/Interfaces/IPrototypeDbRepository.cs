@@ -33,5 +33,15 @@ namespace Prototype2WebApi.Interfaces
         public bool DoesFamilyStatusExistById(int id);
         public List<FamilyStatus> GetAllFamilyStatuses();
         public FamilyStatus GetFamilyStatusById(int id);
+        Discussion CreateNewDiscussion(Discussion discussion);
+        public Discussion GetDiscussionById(int id);
+        List<Discussion> GetDiscussion();
+        Avatar CreateNewAvatar(Avatar avatar);
+        List<Avatar> GetAvatarData();
+        public Avatar GetAvatarById(int id);
+        Following CreateNewFollower(Following following);
+        List<Following> GetUserFollowerData();
+        public Following GetFollowerById(int id);
+        public bool DoesFollowerExistById(int id);
     }
 }
