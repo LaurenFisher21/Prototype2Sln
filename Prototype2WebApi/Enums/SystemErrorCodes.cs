@@ -25,6 +25,9 @@
         FamilyGroupCreationFailed,
         FamilyStatusNotValid,
         FamilyStatusDuplicate,
-        FamilyStatusCreationFailed
+        FamilyStatusCreationFailed,
+        AuthenticationNotValid,
+        AuthenticationDuplicate,
+        AuthenticationCreationFailed
     }
 }

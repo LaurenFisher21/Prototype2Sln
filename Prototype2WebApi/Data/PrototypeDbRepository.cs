@@ -244,5 +244,17 @@ namespace Prototype2WebApi.Data
         {
             return _dataContext.Followings.Any(use => use.FollowingId == id);
         }
+
+        public bool PerformAuthenticationCheck(string userName, string pin)
+        {
+            var user = _dataContext.Authentications.Where(u => u.EmailAddress == userName && u.Pin == pin).FirstOrDefault();
+
+            if (user != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

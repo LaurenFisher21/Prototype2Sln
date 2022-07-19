@@ -23,5 +23,6 @@ namespace Prototype2WebApi.Data
         public DbSet<PostedStory> PostedStories { get; set; }
         public DbSet<Sticker> Stickers { get; set; }
         public DbSet<Story> Stories { get; set; }
+        public DbSet<Authentication> Authentications { get; set; }
     }
 }
