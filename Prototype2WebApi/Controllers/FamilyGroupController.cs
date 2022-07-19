@@ -24,6 +24,14 @@ namespace Prototype2WebApi.Controllers
                 {
                     return BadRequest(SystemErrorCodes.FamilyGroupNotValid.ToString());
                 }
+                FamilyStatus familyStatus = _prototypeDbRepository.GetFamilyStatusById(familygroup.FamilyStatusId);
+                if(familyStatus != null)
+                {
+                    if((familygroup.FamilyGroupId == (int) FamilyStatusEnum.Mother))
+                    {
+
+                    }
+                }
                 bool familystatusExists = _prototypeDbRepository.DoesFamilyStatusExistById(familygroup.FamilyGroupId);
                 if (familystatusExists)
                 {
