@@ -16,7 +16,7 @@ namespace Prototype2WebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateSchedule([FromBody] Sticker sticker)
+        public IActionResult CreateNewSticker([FromBody] Sticker  sticker)
         {
             try
             {
@@ -27,27 +27,29 @@ namespace Prototype2WebApi.Controllers
                 bool DoesStickerExist = _prototypeDbRepository.DoesStickerExistById(sticker.StickerId);
                 if (DoesStickerExist)
                 {
-                    return StatusCode(StatusCodes.Status409Conflict, SystemErrorCodes.PostedStoryDuplicate.ToString());
+                    return StatusCode(StatusCodes.Status409Conflict, SystemErrorCodes.StickerDuplicate.ToString());
                 }
-                _prototypeDbRepository.CreateNewSchedule(schedule);
+                _prototypeDbRepository.CreateNewSticker(sticker);
             }
             catch (Exception)
             {
-                return BadRequest(SystemErrorCodes.ScheduleCreationFailed.ToString());
+                return BadRequest(SystemErrorCodes.StickerCreationFailed.ToString());
             }
-            return Ok(schedule);
+            return Ok(sticker);
         }
         [HttpGet]
-        public IEnumerable<Schedule> Get()
+        public IEnumerable<Sticker> Get()
         {
-            return _prototypeDbRepository.GetAllSchedules();
+            return _prototypeDbRepository.GetAllStickers();
         }
 
         // GET api/<ScheduleController>/5
         [HttpGet("byid")]
-        public Schedule Get([FromQuery] int id)
+        public Sticker Get([FromQuery] int id)
         {
-            return _prototypeDbRepository.GetScheduleById(id);
+            return _prototypeDbRepository.GetStickerById(id);
         }
     }
+
+       
 }

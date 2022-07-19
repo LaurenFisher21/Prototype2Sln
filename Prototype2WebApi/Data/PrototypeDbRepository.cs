@@ -277,5 +277,30 @@ namespace Prototype2WebApi.Data
         {
             return _dataContext.Followings.Any(use => use.FollowingId == id);
         }
+
+        public Sticker CreateNewSticker(Sticker sticker)
+        {
+            _dataContext.Stickers.Add(sticker);
+            _dataContext.SaveChanges();
+
+            return sticker;
+        }
+
+        public List<Sticker> GetAllStickers()
+        {
+            var stickers = _dataContext.Stickers.ToList();
+            return stickers;
+        }
+
+        public Sticker GetStickerById(int id)
+        {
+            var sticker = _dataContext.Stickers.Where(x => x.StickerId == id).FirstOrDefault();
+            return sticker;
+        }
+
+        public bool DoesStickerExistById(int id)
+        {
+            return _dataContext.Stickers.Any(use => use.StickerId == id);
+        }
     }
 }

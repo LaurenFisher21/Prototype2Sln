@@ -17,7 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModel\" />
+    <Folder Include="Services\" />
+    <Folder Include="View\Controls\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Styles\" />
+    <Folder Include="View\Dialogs\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -25,6 +25,12 @@
         FamilyGroupCreationFailed,
         FamilyStatusNotValid,
         FamilyStatusDuplicate,
-        FamilyStatusCreationFailed
+        FamilyStatusCreationFailed,
+        StickerNotValid,
+        StickerDuplicate,
+        StickerCreationFailed,
+        StoryNotValid,
+        StoryDuplicate,
+        StoryCreationFailed
     }
 }

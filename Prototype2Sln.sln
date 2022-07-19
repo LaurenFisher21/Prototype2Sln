@@ -9,7 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prototype2.iOS", "Prototype
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prototype2", "Prototype2\Prototype2\Prototype2.csproj", "{27B5F184-E96A-4106-9836-814F5ECA9400}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prototype2WebApi", "Prototype2WebApi\Prototype2WebApi.csproj", "{4D4B27CB-10C2-4A3E-925E-56875C453817}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prototype2WebApi", "Prototype2WebApi\Prototype2WebApi.csproj", "{4D4B27CB-10C2-4A3E-925E-56875C453817}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{7320E3D9-20C1-40FB-BCB5-9B24ABEA2263}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{5B07CF9F-9F1B-4630-BBE8-48ABDFA0D3F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{7D6AD750-8329-4B36-954F-2D94B928F11B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -90,6 +96,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AEC5F27B-B7C6-41DD-97ED-D81596034656} = {5B07CF9F-9F1B-4630-BBE8-48ABDFA0D3F1}
+		{D1D7D3CF-0AE3-4371-9496-1598E11624B7} = {5B07CF9F-9F1B-4630-BBE8-48ABDFA0D3F1}
+		{27B5F184-E96A-4106-9836-814F5ECA9400} = {5B07CF9F-9F1B-4630-BBE8-48ABDFA0D3F1}
+		{4D4B27CB-10C2-4A3E-925E-56875C453817} = {7320E3D9-20C1-40FB-BCB5-9B24ABEA2263}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D25D2FB5-9E53-44A9-AE04-88133A7E87DB}
