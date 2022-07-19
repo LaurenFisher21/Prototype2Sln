@@ -4,7 +4,7 @@
     {
         CustomerNotValid,
         CustomerDuplicate,
-        StoryDuplicate,
+        CustomerCreationFailed,
         PostedStoryDuplicate,
         ScheduleCreationFailed,
         AuthenticationFailed,
@@ -14,8 +14,17 @@
         InsufficientFundsForTransaction,
         SchedueNotValid,
         PostedStoryFailed,
-        StoryNotValid,
-        StoryCreationFailed,
-        StickerNotValid
+        FollowerNotValid,
+        FollowerDuplicate,
+        FollowerCreationFailed,
+        AvatarNotValid,
+        AvatarDuplicate,
+        AvatarCreationFailed,
+        FamilyGroupNotValid,
+        FamilyGroupDuplicate,
+        FamilyGroupCreationFailed,
+        FamilyStatusNotValid,
+        FamilyStatusDuplicate,
+        FamilyStatusCreationFailed
     }
 }

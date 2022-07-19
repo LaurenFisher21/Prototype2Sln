@@ -22,18 +22,18 @@ namespace Prototype2WebApi.Controllers
             {
                 if (familygroup == null || !ModelState.IsValid)
                 {
-                    return BadRequest(SystemErrorCodes.CustomerNotValid.ToString());
+                    return BadRequest(SystemErrorCodes.FamilyGroupNotValid.ToString());
                 }
                 bool familystatusExists = _prototypeDbRepository.DoesFamilyStatusExistById(familygroup.FamilyGroupId);
                 if (familystatusExists)
                 {
-                    return StatusCode(StatusCodes.Status409Conflict, SystemErrorCodes.CustomerDuplicate.ToString());
+                    return StatusCode(StatusCodes.Status409Conflict, SystemErrorCodes.FamilyGroupDuplicate.ToString());
                 }
                 _prototypeDbRepository.CreateFamilyGroup(familygroup);
             }
             catch (Exception e)
             {
-                return BadRequest(SystemErrorCodes.ScheduleCreationFailed.ToString());
+                return BadRequest(SystemErrorCodes.FamilyGroupCreationFailed.ToString());
             }
             return Ok(familygroup);
         }

@@ -28,13 +28,13 @@ namespace Prototype2WebApi.Controllers
                 bool familystatusExists = _prototypeDbRepository.DoesFamilyStatusExistById(familystatus.FamilyStatusId);
                 if (familystatusExists)
                 {
-                    return StatusCode(StatusCodes.Status409Conflict, SystemErrorCodes.CustomerDuplicate.ToString());
+                    return StatusCode(StatusCodes.Status409Conflict, SystemErrorCodes.FamilyStatusDuplicate.ToString());
                 }
                 _prototypeDbRepository.CreateFamilyStatus(familystatus);
             }
             catch (Exception e)
             {
-                return BadRequest(SystemErrorCodes.ScheduleCreationFailed.ToString());
+                return BadRequest(SystemErrorCodes.FamilyStatusCreationFailed.ToString());
             }
             return Ok(familystatus);
         }

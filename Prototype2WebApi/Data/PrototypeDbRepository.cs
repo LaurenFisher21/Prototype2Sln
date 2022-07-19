@@ -213,6 +213,69 @@ namespace Prototype2WebApi.Data
             return _dataContext.Stories.Any(use => use.StoryId == id);
         }
 
+        public Discussion CreateNewDiscussion(Discussion discussion)
+        {
+            _dataContext.Discussions.Add(discussion);
+            _dataContext.SaveChanges();
 
+            return discussion;
+        }
+
+        public Discussion GetDiscussionById(int id)
+        {
+            var discuss = _dataContext.Discussions.Where(x => x.DiscussionsId == id).FirstOrDefault();
+            return discuss;
+        }
+
+        public List<Discussion> GetDiscussion()
+        {
+            var discuss = _dataContext.Discussions.ToList();
+            return discuss;
+        }
+
+        public Avatar CreateNewAvatar(Avatar avatar)
+        {
+            _dataContext.Avatars.Add(avatar);
+            _dataContext.SaveChanges();
+
+            return avatar;
+        }
+
+        public List<Avatar> GetAvatarData()
+        {
+            var avatar = _dataContext.Avatars.ToList();
+            return avatar;
+        }
+
+        public Avatar GetAvatarById(int id)
+        {
+            var avatar = _dataContext.Avatars.Where(x => x.AvatarId == id).FirstOrDefault();
+            return avatar;
+        }
+
+        public Following CreateNewFollower(Following following)
+        {
+            _dataContext.Followings.Add(following);
+            _dataContext.SaveChanges();
+
+            return following;
+        }
+
+        public List<Following> GetUserFollowerData()
+        {
+            var following = _dataContext.Followings.ToList();
+            return following;
+        }
+
+        public Following GetFollowerById(int id)
+        {
+            var following = _dataContext.Followings.Where(x => x.FollowingId == id).FirstOrDefault();
+            return following;
+        }
+
+        public bool DoesFollowerExistById(int id)
+        {
+            return _dataContext.Followings.Any(use => use.FollowingId == id);
+        }
     }
 }
