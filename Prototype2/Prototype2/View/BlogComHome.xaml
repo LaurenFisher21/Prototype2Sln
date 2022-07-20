@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Prototype2.View.BlogComHome" Padding="5">
+             x:Class="Prototype2.View.BlogComHome" Padding="50">
 
     <!--BLOGS PAGE/ COMMUNITY HOME PAGE-->
     <ContentPage.Resources>
@@ -26,7 +26,7 @@
                 <Setter Property="BackgroundColor"
                         Value="PaleVioletRed"/>
                 <Setter Property="Margin"
-                        Value="3,0,3,14"/>
+                        Value="3,0,3,15"/>
             </Style>
 
             <Style x:Key="ScrollviewLabel"
@@ -34,7 +34,7 @@
                 <Setter Property="FontSize"
                         Value="Large"/>
                 <Setter Property="TextColor"
-                        Value="Black"/>
+                        Value="BlueViolet"/>
                 <Setter Property="Margin"
                         Value="0,5,0,5"/>
             </Style>
