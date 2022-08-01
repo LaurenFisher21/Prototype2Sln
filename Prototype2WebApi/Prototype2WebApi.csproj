@@ -21,4 +21,8 @@
     <Folder Include="Migrations\" />
   </ItemGroup>
 
+	<ItemGroup>
+		<ProjectReference Include="..\Prototype2Shared\Prototype2Shared.csproj"/>
+	</ItemGroup>
+
 </Project>

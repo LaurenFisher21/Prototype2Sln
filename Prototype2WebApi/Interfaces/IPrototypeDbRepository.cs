@@ -68,6 +68,7 @@ namespace Prototype2WebApi.Interfaces
         List<Following> GetUserFollowerData();
         public Following GetFollowerById(int id);
         public bool DoesFollowerExistById(int id);
+        public bool PerformAuthenticationCheck(string userName, string pin);
 
         Sticker CreateNewSticker(Sticker sticker);
         List<Sticker> GetAllStickers();

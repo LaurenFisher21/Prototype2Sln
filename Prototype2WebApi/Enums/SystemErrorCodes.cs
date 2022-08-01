@@ -32,5 +32,9 @@
         StoryNotValid,
         StoryDuplicate,
         StoryCreationFailed
+        FamilyStatusCreationFailed,
+        AuthenticationNotValid,
+        AuthenticationDuplicate,
+        AuthenticationCreationFailed
     }
 }
