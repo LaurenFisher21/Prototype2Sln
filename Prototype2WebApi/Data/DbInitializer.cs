@@ -1,4 +1,6 @@
-﻿namespace Prototype2WebApi.Data
+﻿using Prototype2WebApi.Models;
+
+namespace Prototype2WebApi.Data
 {
     public class DbInitializer
     {
@@ -11,7 +13,20 @@
 
         public void Run()
         {
+            if(!_context.UserInfoDatas.Any())
+            {
+                var user = new UserInfoData();
+                user.FirstName = "Ash";
+                user.LastName = "Ketchum";
+                user.EmailAddress = "aketchum@pokemon.com";
+                user.CellNumber = "0123456789";
+                user.Password = "PokemonMasters8";
+            }
 
+            if(!_context.FamilyGroups.Any())
+            {
+                var fam = new FamilyGroup();
+            }
         }
     }
 }
